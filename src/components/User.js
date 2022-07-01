@@ -19,6 +19,8 @@ class User extends Component {
 //   useEffect(() => {
 //     console.log(`${props.name} mounted`);
 //     return () => {
+//       // kai sunaikinamas komponentas
+//       // componentWillUnmount
 //       console.log(`${props.name} is fading away`);
 //     };
 //   }, []);
