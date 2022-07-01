@@ -1,6 +1,7 @@
 import css from './UserFinder.module.css';
 import { useState, useEffect, Component } from 'react';
 import Users from './Users';
+import toast, { Toaster } from 'react-hot-toast';
 
 const DUMMY_USERS = [
   { id: 'u1', name: 'James' },
@@ -37,6 +38,7 @@ class UserFinder extends Component {
         userObj.name.includes(this.state.searchTerm)
       );
       this.setState({ filteredUsers: filteredArr });
+      toast.success('tu ieskai kazko');
     } else {
       console.log('state.searchTerm is the same');
     }
@@ -50,6 +52,7 @@ class UserFinder extends Component {
     // console.log('UserFinder render constructor');
     return (
       <>
+        <Toaster />
         <div className={css.finder}>
           <input
             type='search'

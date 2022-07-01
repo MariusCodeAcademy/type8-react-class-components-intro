@@ -1,5 +1,6 @@
 import { Component, useState } from 'react';
 import User from './User';
+import toast, { Toaster } from 'react-hot-toast';
 
 import classes from './Users.module.css';
 

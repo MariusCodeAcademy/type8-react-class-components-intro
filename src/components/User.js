@@ -1,10 +1,12 @@
 import { Component, useEffect } from 'react';
 import classes from './User.module.css';
+import toast, { Toaster } from 'react-hot-toast';
 
 class User extends Component {
   componentWillUnmount() {
     // kai komponentas sunaikinamas
     console.log(`${this.props.name} is fading away bye bye`);
+    toast.error(`${this.props.name} is fading away bye bye`);
   }
   componentDidMount() {
     console.log(`${this.props.name} mounted`);
