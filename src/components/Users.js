@@ -19,12 +19,12 @@ class Users extends Component {
     };
   }
 
-  toggleUsersHandler() {
+  toggleUsersHandler = () => {
     // console.log('toggleUsersHandler', this);
     // this.state.showUsers = false; // negalima mutuoti state;
     // paduoda reiksme yra sujungiama su esamu state. nereikia perkopijuoti kitu reiksmiu
-    this.setState({ showUsers: false });
-  }
+    this.setState((prevState) => ({ showUsers: !prevState.showUsers }));
+  };
 
   render() {
     const usersList = (
@@ -37,7 +37,7 @@ class Users extends Component {
     return (
       <div className={classes.users}>
         {/* .bind(this) nes kitaip  toggleUsersHandler this === undefined */}
-        <button onClick={this.toggleUsersHandler.bind(this)}>
+        <button onClick={this.toggleUsersHandler}>
           {this.state.showUsers ? 'Hide' : 'Show'} Users
         </button>
         {this.state.showUsers && usersList}
